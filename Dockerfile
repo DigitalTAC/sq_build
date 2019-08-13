@@ -4,13 +4,13 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN true
 
 # Installing gnupg2
-RUN apt-get update && apt-get install -y gnupg2 apt-transport-https ca-certificates gnupg-agent
+RUN apt-get update && apt-get install -y gnupg2 apt-transport-https ca-certificates gnupg-agent lsb-release software-properties-common
 
-# Installing wget
-RUN apt-get update && apt-get install -y wget && rm -rf /var/lib/apt/lists/*
+# Installing wget, curl
+RUN apt-get update && apt-get install -y wget curl && rm -rf /var/lib/apt/lists/*
 
 # Installing curl
-RUN apt-get update && apt-get install -y curl
+#RUN apt-get update && apt-get install -y curl
 
 # Add Docker’s official GPG key
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
