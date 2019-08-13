@@ -21,7 +21,7 @@ RUN add-apt-repository \
 # Install the latest version of Docker Engine - Community and containerd
 RUN apt-get update && apt-get install -y docker-ce docker-ce-cli containerd.io
 
-RUN systemctl daemon-reload
+#RUN systemctl daemon-reload
 RUN service docker restart
 RUN service docker status
 
