@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN true
 
 # Installing gnupg2
-RUN apt-get update && apt-get install -y gnupg2 apt-transport-https ca-certificates gnupg-agent lsb-release software-properties-common
+RUN apt-get update && apt-get install -y gnupg2 apt-transport-https ca-certificates gnupg-agent lsb-release software-properties-common systemd
 
 # Installing wget, curl
 RUN apt-get update && apt-get install -y wget curl && rm -rf /var/lib/apt/lists/*
