@@ -23,6 +23,7 @@ RUN apt-get update && apt-get install -y docker-ce docker-ce-cli containerd.io
 
 #RUN systemctl daemon-reload
 RUN service docker restart
+RUN sleep 5
 RUN service docker status
 
 # Verify that Docker Engine - Community is installed correctly
