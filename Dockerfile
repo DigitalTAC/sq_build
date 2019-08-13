@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y wget && rm -rf /var/lib/apt/lists/*
 RUN apt-get update && apt-get install -y curl
 
 # Add Docker’s official GPG key
-RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 
 # Set up the stable repository
 RUN add-apt-repository \
@@ -22,7 +22,7 @@ RUN add-apt-repository \
    stable"
 
 # Install the latest version of Docker Engine - Community and containerd
-RUN apt-get update && apt-get install docker-ce docker-ce-cli containerd.io
+RUN apt-get update && apt-get install -y docker-ce docker-ce-cli containerd.io
 
 # Verify that Docker Engine - Community is installed correctly
 RUN docker run hello-world
