@@ -5,4 +5,4 @@ RUN wget "https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-
     | tar xf sonar-scanner
 ENV PATH `pwd`/sonar-scanner/bin:$PATH
 USER 1001
-ENTRYPOINT ["./bin/run.sh"]
+
